@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/clubFragment"
+        android:name="com.example.mt_danny_club_android.club.fragment.ClubFragment"
+        android:label="ClubFragment"
+        tools:layout="@layout/fragment_club">
+        <action
+            android:id="@+id/action_clubFragment_to_writePageFragment"
+            app:destination="@id/writePageFragment" />
+        <action
+            android:id="@+id/action_clubFragment_to_pageFragment"
+            app:destination="@id/pageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.mt_danny_club_android.login.fragment.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mt_danny_club_android.main.fragment.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_clubFragment"
+            app:destination="@id/clubFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageFragment"
+        android:name="com.example.mt_danny_club_android.page.fragment.PageFragment"
+        android:label="PageFragment"
+        tools:layout="@layout/fragment_page"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.mt_danny_club_android.profile.fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.example.mt_danny_club_android.search_result.fragment.SearchResultFragment"
+        android:label="SearchResultFragment"
+        tools:layout="@layout/fragment_search_result"/>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.mt_danny_club_android.signup.fragment.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_signUpFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.mt_danny_club_android.start.fragment.StartFragment"
+        android:label="StartFragment"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/writePageFragment"
+        android:name="com.example.mt_danny_club_android.write_page.fragment.WritePageFragment"
+        android:label="WritePageFragment"
+        tools:layout="@layout/fragment_write_page"/>
+</navigation>
