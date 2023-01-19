@@ -9,7 +9,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="130dp"
         android:layout_height="150dp"
-        android:background="@drawable/border">
+        android:background="@drawable/border"
+
+        android:layout_marginHorizontal="1dp"
+        >
 
         <ImageView
             android:id="@+id/imageView3"
@@ -44,7 +47,7 @@
             android:layout_height="wrap_content"
 
             android:textSize="15dp"
-            android:fontFamily="@font/pretendard_medium"
+            android:fontFamily="@font/pretendard_semibold"
             android:text="Sample"
             android:singleLine="true"
 
@@ -61,7 +64,7 @@
             android:layout_height="wrap_content"
 
             android:textSize="10dp"
-            android:fontFamily="@font/pretendard_light"
+            android:fontFamily="@font/pretendard_medium"
             android:text="sample sample sample sample"
             android:singleLine="true"
 
@@ -75,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:fontFamily="@font/pretendard_semibold"
+            android:fontFamily="@font/pretendard_bold"
             android:text="1213"
             android:textSize="8dp"
 
