@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,15 +11,157 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="메인 화면"
-            android:textSize="50dp"
-            android:fontFamily="@font/pretendard_bold"
-            android:textColor="@color/black"
-            android:gravity="center"
-            />
+
+            android:layout_height="110dp"
+
+            android:background="@color/sub_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/search_box"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="8dp"
+
+
+                android:background="@drawable/search_box"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="60dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="8dp"
+
+                android:background="@drawable/danny_small_logo"
+                app:layout_constraintBottom_toTopOf="@+id/search_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="20dp"
+                android:layout_height="11dp"
+                android:layout_marginStart="20dp"
+
+                android:layout_marginBottom="65dp"
+                android:background="@drawable/category_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recommend_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_line"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recommend_recyclerview" />
+
+
+        <TextView
+            android:id="@+id/issue_club_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="🔥뜨거운 동호회 >"
+            android:fontFamily="@font/pretendard_medium"
+            android:textSize="15dp"
+            android:textColor="@color/text_grey"
+
+            android:layout_marginVertical="20dp"
+            android:layout_marginEnd="270dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommend_recyclerview" />
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/issue_club_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_issue_club"
+            tools:itemCount="3"
+
+
+            android:layout_marginStart ="10dp"
+            android:layout_marginVertical="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/issue_club_txt" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ad_btn"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginVertical="15dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/cardview_dark_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/issue_club_recyclerview" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginVertical="5dp"
+
+            android:background="@drawable/gray_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ad_btn" />
+
+        <TextView
+            android:id="@+id/best_txt"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_marginVertical="20dp"
+            android:layout_marginEnd="270dp"
+
+            android:text="실시간 베스트 >"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/best_club_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/best_txt" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
