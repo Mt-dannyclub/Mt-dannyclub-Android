@@ -1,5 +1,6 @@
 package com.example.mt_danny_club_android.main.fragment
 
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mt_danny_club_android.R
 import com.example.mt_danny_club_android.base.BaseFragment
@@ -73,6 +74,11 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main)  
         issueClubAdapter.submitList(issueClubDataSet)
         bestPostAdapter.submitList(bestPostDataSet)
         recommendClubAdapter.submitList(recommendClubDataSet)
+
+        binding.adBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_clubFragment)
+        }
+
     }
 
 }
