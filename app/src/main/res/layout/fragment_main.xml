@@ -31,6 +31,10 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginBottom="8dp"
+                android:paddingStart="20dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:textSize="15dp"
+                android:textColor="@color/text_grey"
 
 
                 android:background="@drawable/search_box"
@@ -39,21 +43,37 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/search_btn"
+
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+
+                android:background="#00FF0000"
+
+                android:layout_marginEnd="7dp"
+                app:layout_constraintBottom_toBottomOf="@+id/search_box"
+                app:layout_constraintEnd_toEndOf="@+id/search_box"
+                app:layout_constraintTop_toTopOf="@+id/search_box" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/logo_btn"
                 android:layout_width="60dp"
                 android:layout_height="24dp"
-                android:layout_marginBottom="8dp"
 
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/danny_small_logo"
                 app:layout_constraintBottom_toTopOf="@+id/search_box"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/category_btn"
+
                 android:layout_width="20dp"
                 android:layout_height="11dp"
                 android:layout_marginStart="20dp"
 
-                android:layout_marginBottom="65dp"
+                android:layout_marginBottom="60dp"
                 android:background="@drawable/category_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +91,7 @@
             android:fontFamily="@font/pretendard_medium"
             android:gravity="center"
             android:textColor="@color/main_green"
-            android:textSize="15dp"
+            android:textSize="17dp"
 
             android:layout_marginStart="15dp"
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
@@ -109,7 +129,7 @@
 
             android:text="🔥뜨거운 동호회 >"
             android:fontFamily="@font/pretendard_semibold"
-            android:textSize="15dp"
+            android:textSize="17dp"
             android:textColor="@color/text_grey"
 
             android:layout_marginVertical="20dp"
@@ -163,8 +183,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:textSize="17dp"
             android:text="실시간 베스트 >"
             android:fontFamily="@font/pretendard_semibold"
+            android:textColor="@color/text_grey"
 
             android:layout_marginVertical="20dp"
             android:layout_marginEnd="270dp"
