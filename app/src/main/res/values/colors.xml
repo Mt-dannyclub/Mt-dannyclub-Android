@@ -11,7 +11,7 @@
     <color name="sub_green">#FFD0E7CD</color>
     <color name="sub_sub_green">#FF2C6957</color>
     <color name="grey">#FFF2F2F2</color>
-    <color name="border_line_grey">#FF71A06B</color>
+    <color name="border_line_grey">#FFDEDEDE</color>
     <color name="text_grey">#FF777777</color>
 
 </resources>
