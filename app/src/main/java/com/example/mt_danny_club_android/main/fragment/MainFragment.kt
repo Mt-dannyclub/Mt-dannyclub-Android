@@ -1,9 +1,12 @@
 package com.example.mt_danny_club_android.main.fragment
 
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
 import com.example.mt_danny_club_android.R
 import com.example.mt_danny_club_android.base.BaseFragment
+import com.example.mt_danny_club_android.base.BaseRecyclerviewAdapter
 import com.example.mt_danny_club_android.databinding.FragmentMainBinding
 import com.example.mt_danny_club_android.main.data.BestPostData
 import com.example.mt_danny_club_android.main.data.IssueClubData
@@ -75,9 +78,42 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main)  
         bestPostAdapter.submitList(bestPostDataSet)
         recommendClubAdapter.submitList(recommendClubDataSet)
 
-        binding.adBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_clubFragment)
-        }
+        issueClubAdapter.setItemClickListener(object : BaseRecyclerviewAdapter.OnItemClickListener{
+
+            override fun onClick(v: View, position: Int) {
+
+                val action = MainFragmentDirections.actionMainFragmentToClubFragment(issueClubDataSet[position].id)
+
+                findNavController().navigate(action)
+
+            }
+
+        })
+
+        bestPostAdapter.setItemClickListener(object  : BaseRecyclerviewAdapter.OnItemClickListener{
+
+            override fun onClick(v: View, position: Int) {
+
+                val action = MainFragmentDirections.actionMainFragmentToPageFragment(bestPostDataSet[position].id)
+
+                findNavController().navigate(action)
+            }
+
+        })
+
+        recommendClubAdapter.setItemClickListener(object : BaseRecyclerviewAdapter.OnItemClickListener{
+
+            override fun onClick(v: View, position: Int) {
+
+                val action = MainFragmentDirections.actionMainFragmentToClubFragment(recommendClubDataSet[position].id)
+
+                findNavController().navigate(action)
+            }
+
+
+        })
+
+
 
     }
 

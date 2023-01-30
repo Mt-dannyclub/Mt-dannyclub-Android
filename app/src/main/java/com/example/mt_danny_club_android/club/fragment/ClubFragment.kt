@@ -1,9 +1,13 @@
 package com.example.mt_danny_club_android.club.fragment
 
 
+import android.view.View
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mt_danny_club_android.R
 import com.example.mt_danny_club_android.base.BaseFragment
+import com.example.mt_danny_club_android.base.BaseRecyclerviewAdapter
 import com.example.mt_danny_club_android.club.data.PostData
 import com.example.mt_danny_club_android.club.util.PostAdapter
 import com.example.mt_danny_club_android.databinding.FragmentClubBinding
@@ -29,10 +33,28 @@ class ClubFragment : BaseFragment<FragmentClubBinding>(R.layout.fragment_club)  
     }
 
     override fun start() {
+
+        val args: ClubFragmentArgs by navArgs()
+        var cludId = args.clubId
+
+        binding.clubNameTxt.text = "${binding.clubNameTxt.text} ${cludId}"
+
         binding.postRecyclerview.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
             adapter = postAdapter
         }
         postAdapter.submitList(postDataSet)
+
+        postAdapter.setItemClickListener(object : BaseRecyclerviewAdapter.OnItemClickListener {
+
+            override fun onClick(v: View, position: Int) {
+
+                val action = ClubFragmentDirections.actionClubFragmentToPageFragment(postDataSet[position].id)
+                findNavController().navigate(action)
+
+            }
+
+        })
+
     }
 }

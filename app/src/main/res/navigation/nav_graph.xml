@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_clubFragment_to_pageFragment"
             app:destination="@id/pageFragment" />
+        <argument
+            android:name="clubId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -42,12 +45,19 @@
         <action
             android:id="@+id/action_mainFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pageFragment"
+            app:destination="@id/pageFragment" />
     </fragment>
     <fragment
         android:id="@+id/pageFragment"
         android:name="com.example.mt_danny_club_android.page.fragment.PageFragment"
         android:label="PageFragment"
-        tools:layout="@layout/fragment_page"/>
+        tools:layout="@layout/fragment_page">
+        <argument
+            android:name="pageId"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.mt_danny_club_android.profile.fragment.ProfileFragment"
