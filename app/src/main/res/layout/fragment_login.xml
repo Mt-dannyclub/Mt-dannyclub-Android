@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,16 +11,131 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="로그인 화면"
-            android:textSize="50dp"
-            android:fontFamily="@font/pretendard_bold"
-            android:textColor="@color/black"
-            android:gravity="center"
-            />
+        <ImageView
+            android:id="@+id/iv_danny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="120dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo" />
 
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="대니산 동호회에 오신 것을 환영합니다,"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_danny" />
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="로그인이나 회원가입을 해주세요"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_title_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                android:layout_marginTop="7dp"
+                android:text="아이디" />
+
+            <EditText
+                android:id="@+id/et_id"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/box"
+                android:hint="아이디을 입력해주세요.."
+                android:paddingHorizontal="17dp"
+                android:textSize="15sp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="108dp"
+                tools:layout_editor_absoluteY="349dp" />
+
+            <TextView
+                android:id="@+id/tv_title_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                android:layout_marginTop="7dp"
+                android:text="비밀번호" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/box"
+                android:hint="비밀번호을 입력해주세요.."
+                android:paddingHorizontal="17dp"
+                android:textSize="15sp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="108dp"
+                tools:layout_editor_absoluteY="349dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="75dp"
+            android:text="로그인"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login">
+
+            <TextView
+                android:id="@+id/tv_id_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="계정이 없으신가요?"
+                tools:layout_editor_absoluteX="116dp"
+                tools:layout_editor_absoluteY="714dp" />
+
+            <TextView
+                android:id="@+id/tv_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:text="회원가입"
+                tools:layout_editor_absoluteX="246dp"
+                tools:layout_editor_absoluteY="712dp" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
