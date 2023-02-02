@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="sign_up"
+            type="com.example.mt_danny_club_android.signup.fragment.SignUpFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,7 +14,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tv_app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -25,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="회원가입"
@@ -33,7 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_app_name" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -46,42 +48,89 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
-                android:id="@+id/editTextTextPersonName2"
+
+            <TextView
+                android:id="@+id/tv_title_name"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"
+                android:text="이름" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/box"
                 android:ems="10"
+                android:hint="이름을 입력해주세요.."
+                android:paddingHorizontal="17dp"
+                android:textSize="15sp"
                 android:inputType="textPersonName"
-                android:text="Name"
                 tools:layout_editor_absoluteX="93dp"
                 tools:layout_editor_absoluteY="271dp" />
 
-            <EditText
-                android:id="@+id/editTextNumber"
+            <TextView
+                android:id="@+id/tv_title_number"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:ems="10"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
+                android:text="학번" />
+
+            <EditText
+                android:id="@+id/et_number"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/box"
+                android:ems="10"
+                android:hint="학번을 입력해주세요.."
+                android:paddingHorizontal="17dp"
+                android:textSize="15sp"
                 android:inputType="number"
                 tools:layout_editor_absoluteX="95dp"
                 tools:layout_editor_absoluteY="340dp" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName"
+            <TextView
+                android:id="@+id/tv_title_id"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:ems="10"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
                 android:layout_marginTop="7dp"
+                android:text="아이디" />
+
+            <EditText
+                android:id="@+id/et_id"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/box"
+                android:hint="아이디을 입력해주세요.."
+                android:paddingHorizontal="17dp"
+                android:textSize="15sp"
+                android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name"
                 tools:layout_editor_absoluteX="108dp"
                 tools:layout_editor_absoluteY="349dp" />
 
-            <EditText
-                android:id="@+id/editTextTextPassword"
+            <TextView
+                android:id="@+id/tv_title_pwd"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="7dp"
+                android:text="비밀번호" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/box"
+                android:hint="비밀번호을 입력해주세요.."
+                android:paddingHorizontal="17dp"
+                android:textSize="15sp"
                 android:ems="10"
                 android:inputType="textPassword"
                 tools:layout_editor_absoluteX="88dp"
@@ -90,7 +139,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_sign_up"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="25dp"
@@ -107,10 +156,10 @@
             android:layout_marginTop="7dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button">
+            app:layout_constraintTop_toBottomOf="@+id/btn_sign_up">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tv_id_check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="계정이 있으신가요?"
@@ -118,7 +167,7 @@
                 tools:layout_editor_absoluteY="714dp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tv_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5sp"
